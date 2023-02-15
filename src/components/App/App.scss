@@ -1,0 +1,42 @@
+.gallery {
+	display: grid;
+	min-height: 100vh;
+	max-width: 100vw;
+	grid-gap: calc(1rem + 4vw) 2.5rem;
+	padding: 2rem;
+	justify-content: center;
+	background-color: #282c34;
+	color: aliceblue;
+	font-size: calc(10px + 2vmin);
+
+	&__message {
+		grid-column: 1/-1;
+		display: block;
+		justify-self: center;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		height: fit-content;
+		min-width: 40%;
+		max-width: 80%;
+		margin-top: 4rem;
+		border: aliceblue solid 2px;
+		border-radius: 2rem	;
+		background: rgba(213, 167, 14, 0.9);
+		color: #282c34;
+		padding: 1em;
+		font-size: 1.75em;
+		font-weight: bold;
+	}
+
+}
+
+@media (min-width: 768px) {
+	.gallery { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1200px) {
+	.gallery { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (min-width: 1600px) {
+	.gallery { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
