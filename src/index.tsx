@@ -16,7 +16,6 @@ root.render(
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta name="theme-color" content="#000000"/>
 			<link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png"/>
-
 			<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 			<title>Rick and Morty - Characters</title>
 			<meta
