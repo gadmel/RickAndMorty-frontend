@@ -1,6 +1,6 @@
-
-import { CharacterProps } from '../components/Character/Character';
 import React, {useEffect, useState} from "react";
+import { CharacterProps } from '../components/Character/Character';
+import axios from "axios";
 
 function useRickAndMortyApi() {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -13,11 +13,12 @@ function useRickAndMortyApi() {
 			setLoading(false)
 			return;
 		}
-		fetch(nextPage)
-			.then(response => response.json())
-			.then(data => {
-				setCharacters([...characters, ...data.results]);
-				setNextPage(data.info.next);
+		axios.get(nextPage).
+			then(response => {
+				setCharacters([...characters, ...response.data.results]);
+				setNextPage(response.data.info.next);
+			}).catch(error => {
+				console.log("Error while fetching characters: ", error);
 			});
 		return () => {console.log("20 more characters have been fetched.");}
 	}, [nextPage, loading]);
